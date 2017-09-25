@@ -38,8 +38,8 @@
 				var texture = new THREE.TextureLoader().load( 'textures/UV_Grid_Sm.jpg' );
 
 				var geometry = new THREE.BoxBufferGeometry( 200, 200, 200 );
-				var material = new THREE.MeshBasicMaterial( { map: texture } );
-
+				//var material = new THREE.MeshBasicMaterial( { map: texture } );
+				var material = new THREE.MeshPhongMaterial( { map: texture } );
 				mesh = new THREE.Mesh( geometry, material );
 				scene.add( mesh );
 
