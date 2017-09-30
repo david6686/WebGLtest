@@ -70,8 +70,8 @@
 				var geometry = new THREE.SphereGeometry( 100, 1000, 1000 );
 				// material = new THREE.MeshBasicMaterial( { map: texture } );
 				// to have the lights affect the material, use Phong instead of Basic
-				material = new THREE.MeshPhongMaterial( { map: texture } );
-				//material = new THREE.MeshPhongMaterial( { wireframe : true } );
+				//material = new THREE.MeshPhongMaterial( { map: texture } );
+				material = new THREE.MeshPhongMaterial( { wireframe : true } );
 
 				mesh = new THREE.Mesh( geometry, material );
 				scene.add( mesh );
