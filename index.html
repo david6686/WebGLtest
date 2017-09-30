@@ -116,8 +116,9 @@
 				// auto-rotation at start - turn it off
 				//mesh.rotation.x += 0.005;
 				mesh.rotation.z += 10;
-				light3.update();
-				
+				light.intensity=params.intensity;
+				light2.intensity=params.intensity;
+				light3.intensity=params.intensity;
 				renderer.render( scene, camera );
 				// have the mouse update the view
 				controls.update();
