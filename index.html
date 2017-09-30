@@ -32,20 +32,30 @@
 				camera.position.z = 400;
 
 				scene = new THREE.Scene();
+				
+				// create a light
 				light = new THREE.DirectionalLight(0xffffff);
 				light.position.set(100,200,400);
 				scene.add(light);
+				light2 = new THREE.DirectionalLight(0xffffff);
+				light2.position.set(-400,200,-400);
+				scene.add(light2);
+				light3 = new THREE.DirectionalLight(0xffffff);
+				light3.position.set(100,-400,-400);
+				scene.add(light3);
+
 				//var texture = new THREE.TextureLoader().load( 'textures/crate.gif' );
 				// let's something other than the crate.gif
 				var texture = new THREE.TextureLoader().load( 'textures/UV_Grid_Sm.jpg' );
 
 				var geometry = new THREE.BoxBufferGeometry( 200, 200, 200 );
-				//var material = new THREE.MeshBasicMaterial( { map: texture } );
-				var material = new THREE.MeshPhongMaterial( { map: texture } );
+				// material = new THREE.MeshBasicMaterial( { map: texture } );
+				// to have the lights affect the material, use Phong instead of Basic
+				material = new THREE.MeshPhongMaterial( { map: texture } );
+
 				mesh = new THREE.Mesh( geometry, material );
 				scene.add( mesh );
-				//light
-				
+
 				renderer = new THREE.WebGLRenderer();
 
 				// set the background color to gray
