@@ -39,19 +39,18 @@
 				scene = new THREE.Scene();
 				
 				// create a light
-				light = new THREE.SpotLight( 0xffffff );
+				light = new THREE.DirectionalLight(0xffffff);
 				light.position.set(100,200,400);
-				scene.add(light);
-				light2 = new THREE.SpotLight( 0xffffff );
-				light2.position.set(-400,200,-400);
-				scene.add(light2);
-				light3 = new THREE.SpotLight( 0xffffff );
-				light3.position.set(100,-400,-400);
-				scene.add(light3);
-
 				light.castShadow = true;
+				scene.add(light);
+				light2 = new THREE.DirectionalLight(0xffffff);
+				light2.position.set(-400,200,-400);
 				light2.castShadow = true;
+				scene.add(light2);
+				light3 = new THREE.DirectionalLight(0xffffff);
+				light3.position.set(100,-400,-400);
 				light3.castShadow = true;
+				scene.add(light3);
 				//add plane 
 				var geometry = new THREE.PlaneGeometry( 1000, 1000 );
 
@@ -76,14 +75,14 @@
 				// to have the lights affect the material, use Phong instead of Basic
 				//material = new THREE.MeshPhongMaterial( { map: texture } );
 				material = new THREE.MeshPhongMaterial( { wireframe : true } );
-				mesh.castShadow=true;
-				mesh.receiveShadow=true;
+
 				mesh = new THREE.Mesh( geometry, material );
+				mesh.castShadow = true;
+      			mesh.receiveShadow = true;
 				scene.add( mesh );
 
 				renderer = new THREE.WebGLRenderer();
-				// enable shadows on the renderer
-    			renderer.shadowMap.enabled = true;
+				renderer.shadowMap.enabled = true;
 				// set the background color to gray
 				renderer.setClearColor( 0xa0a0a0 );
 
