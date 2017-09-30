@@ -16,9 +16,14 @@
 
 		<script src="three.js/build/three.js"></script>
 		<script src="js/controls/OrbitControls.js"></script>
-
+		<script src="three.js/build/three.js"></script>
+		<script src="js/controls/OrbitControls.js"></script>
+		<script src="js/libs/dat.gui.min.js"></script>
+			
 		<script>
-
+			"use strict";
+			var controls;
+			var light, light2, light3, params;	// add this
 			var controls;
 			var camera, scene, renderer;
 			var mesh;
@@ -84,6 +89,14 @@
 				//
 
 				window.addEventListener( 'resize', onWindowResize, false );
+
+				//add adjust light
+				// add all this to create a slider
+				params = {intensity: 1};				
+				var gui = new dat.GUI();
+
+				gui.add( params, 'intensity', 0, 2 );
+				gui.open();
 
 			}
 
