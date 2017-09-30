@@ -34,7 +34,7 @@
 			function init() {
 				camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 2000 );	// near and far plane distances
 				//camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000 );
-				//camera.position.z = 400;
+				camera.position.z = 400;
 
 				scene = new THREE.Scene();
 				
@@ -67,7 +67,7 @@
 				var texture = new THREE.TextureLoader().load( 'textures/UV_Grid_Sm.jpg' );
 
 				//var geometry = new THREE.BoxBufferGeometry( 200, 200, 200 );
-				var geometry = new THREE.SphereGeometry( 100, 32, 16 );
+				var geometry = new THREE.SphereGeometry( 100, 100, 100 );
 				// material = new THREE.MeshBasicMaterial( { map: texture } );
 				// to have the lights affect the material, use Phong instead of Basic
 				material = new THREE.MeshPhongMaterial( { map: texture } );
