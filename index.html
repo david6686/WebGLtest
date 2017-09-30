@@ -66,10 +66,12 @@
 				// let's something other than the crate.gif
 				var texture = new THREE.TextureLoader().load( 'textures/UV_Grid_Sm.jpg' );
 
-				var geometry = new THREE.BoxBufferGeometry( 200, 200, 200 );
+				//var geometry = new THREE.BoxBufferGeometry( 200, 200, 200 );
+				var geometry = new THREE.SphereGeometry( 100, 32, 16 );
 				// material = new THREE.MeshBasicMaterial( { map: texture } );
 				// to have the lights affect the material, use Phong instead of Basic
-				material = new THREE.MeshPhongMaterial( { map: texture } );
+				//material = new THREE.MeshPhongMaterial( { map: texture } );
+				material = new THREE.MeshPhongMaterial( { wireframe : true } );
 
 				mesh = new THREE.Mesh( geometry, material );
 				scene.add( mesh );
@@ -115,7 +117,7 @@
 
 				// auto-rotation at start - turn it off
 				//mesh.rotation.x += 0.005;
-				mesh.rotation.z += 10;
+				mesh.rotation.z += 0.5;
 				light.intensity=params.intensity;
 				light2.intensity=params.intensity;
 				light3.intensity=params.intensity;
