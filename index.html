@@ -43,7 +43,15 @@
 				light3 = new THREE.DirectionalLight(0xffffff);
 				light3.position.set(100,-400,-400);
 				scene.add(light3);
+				//add plane 
+				var geometry = new THREE.PlaneGeometry( 1000, 1000 );
 
+				var material = new THREE.MeshPhongMaterial(
+				    {color: 0xffff00, side: THREE.DoubleSide} );
+					
+				var plane = new THREE.Mesh( geometry, material );
+
+				scene.add( plane );
 				//var texture = new THREE.TextureLoader().load( 'textures/crate.gif' );
 				// let's something other than the crate.gif
 				var texture = new THREE.TextureLoader().load( 'textures/UV_Grid_Sm.jpg' );
