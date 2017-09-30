@@ -32,12 +32,12 @@
 			animate();
 
 			function init() {
-				camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 2000 );	// near and far plane 
+				camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 2000 );	// near and far plane distances
 				//camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000 );
 				//camera.position.z = 400;
 
 				scene = new THREE.Scene();
-				distances
+				
 				// create a light
 				light = new THREE.DirectionalLight(0xffffff);
 				light.position.set(100,200,400);
