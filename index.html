@@ -121,6 +121,10 @@
 				light.intensity=params.intensity;
 				light2.intensity=params.intensity;
 				light3.intensity=params.intensity;
+				// bounce				
+				mesh.position.x =100 * Math.Math.cos(Date.now() * 0.005);
+				mesh.position.y =100 * Math.Math.cos(Date.now() * 0.005);
+				mesh.position.z =100 * Math.Math.cos(Date.now() * 0.005);
 				renderer.render( scene, camera );
 				// have the mouse update the view
 				controls.update();
